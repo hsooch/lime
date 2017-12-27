@@ -1,0 +1,217 @@
+/*body, div { height: 100%; }*/
+
+/*화면 전체틀*/
+.fullFrame { width: 100%; position: relative; clear: both; }
+.contentFrame { width: 980px; display: block; position: relative; margin: 0px auto; }
+
+
+/*로그인*/
+#loginWrap { margin-top: 100px; /*background: #999;*/ }
+#loginWrap> .Ltop { display: block; height: 60px; position: relative; border-bottom: 1px solid #dedede; }
+#loginWrap> .Ltop> h1 { top: 0px; }
+.loignArea { padding: 20px 35px; min-height: 250px; background: #f8f8f8 url(../images/login/areaBg.png) right center no-repeat; border: 1px solid #dedede; border-top: 3px solid #0553a8; margin-top: 20px; }
+.loignArea> h2 { font-size: 45px; font-family: 'KhmerUIb'; background: url(../images/login/icon_lock.png) left center no-repeat; padding-left: 45px; }
+.loignArea> .cover { }
+.loignArea> .cover:after { content:""; clear:both; display:block; *zoom:1; }
+.loignArea> .cover>.left { float: left; }
+.loignArea> .cover>.left> p { letter-spacing: -1px; }
+.loignArea> .cover>.left> p> label { width: 80px; display: inline-block; font-family: 'NanumGothicBlod'; font-size: 16px; }
+.loignArea> .cover>.left> p> input { padding: 5px; }
+.loignArea> .cover>.right { float: left; background: #2475d0; border: 1px solid #115199; padding: 26px 30px; color: #FFF; font-family: 'NanumGothicBlod'; }
+.loignArea> ul { clear: both; display: block; font-size: 14px;  letter-spacing: -1px; }
+.loignArea> ul> li { background: url(../images/sub/blit_02.gif) left center no-repeat; padding-left: 8px; font-family: 'malgun'; }
+.loignArea> ul> li> a { font-size: 12px; }
+
+
+.loginInfo { padding: 30px 35px; }
+.loginInfo:after { content:""; clear:both; display:block; *zoom:1; }
+.loginInfo> .section { width: 45%; }
+.loginInfo> .section> h4 { background: url(../images/login/blit_01.gif) left 6px no-repeat; font-family: 'malgunbd'; letter-spacing: -1px; padding-left: 17px; font-size: 16px; color: #195ba8; }
+.loginInfo> .section:after { content:""; clear:both; display:block; *zoom:1; }
+.loginInfo> .section> .infoTxt { width: 75%; letter-spacing: -1px; font-size: 14px; line-height: 22px; color: #454545; }
+.loginInfo> .section> a { font-size: 14px; font-family: 'malgun'; letter-spacing: -1px; }
+
+
+
+
+
+
+
+/*해더*/
+#header { height: 84px; background: url(../images/common/topBg.gif) repeat-x; }
+#header #top { font-size: 12px; }
+h1 { position: absolute; left: 0px; top: 18px; background: url(../images/common/logo.png) no-repeat;  }
+h1> a { width: 290px; height: 46px; display: block;  }
+#header #top> ul { position: absolute; right: 0px; top: 13px; }
+#header #top> ul> li { color: #c0c0c0; float: left; margin-left: 7px; }
+#header #top> ul> li a { color: #292929; }
+#header #top> ul> li.admin { font-size: 11px; font-family: 'NanumGothicBlod'; border: 1px solid #dee0df; background: #FFF; }
+#header #top> ul> li.admin a { color: #176271; padding: 1px 7px ; display: block; }
+#header #top p { position: absolute; right: 0px; top: 55px; font-size: 11px; background: url(../images/common/icon_user.png) left center no-repeat; padding-left: 20px; }
+#header #top p> b { font-family: 'NanumGothicBlod'; }
+
+/*대메뉴*/
+#mainArea { height: 47px; border-top: 2px solid #1c6fbd; border-bottom: 1px solid #d5d5d5; background: url(../images/common/mainGnbBg.gif) repeat-x; }
+#mainArea #mainGnb { font-size: 16px; letter-spacing: -1px; }
+#mainArea #mainGnb li { float: left; font-family: 'NanumGothicBlod'; width: 20%; text-align: center; background: url(../images/common/mainGnbBar.gif) right 8px no-repeat; }
+#mainArea #mainGnb li a { height: 34px; padding-top: 13px; display: block; color: #000; }
+#mainArea #mainGnb li a.on { background: #1c6fbd; color: #FFF; }
+#mainArea #mainGnb li a.on:hover { color: #fff; }
+#mainArea #mainGnb li a:hover { color: #08559e; }
+#mainArea #mainGnb li.on { background: #1c6fbd; }
+#mainArea #mainGnb li.on a { color: #FFF; display: block; height: 26px; }
+
+/*중메뉴*/
+#subArea { height: 43px; border-bottom: 1px solid #d5d5d5; background: #f7f8fc; }
+#subArea #subGnb { font-size: 14px; position: relative; }
+#subArea #subGnb> li { height: 30px; padding: 13px 50px 0px 25px; float: left; background: url(../images/sub/navArrow.png) right no-repeat; display: block; }
+#subArea #subGnb> li.local { }
+#subArea #subGnb> li>a { height: 30px; padding: 13px 50px 0px 25px ;display: block; background: url(../images/sub/icon_arrow.png) right no-repeat; font-family: 'NanumGothicBlod' }
+
+#subArea #subGnb> li> .subTree { min-width: 150px; height: 220px; border:1px solid #d5d5d5; border-top: none; background: #f7f8fc; padding: 0px 20px; position: absolute; left: 150px; top: 43px; display: none; z-index: 3; }
+#subArea #subGnb> li> .subTree> a { display: block; padding: 10px;  border-bottom: 1px dashed #CCC;  }
+#subArea #subGnb> li> .subTree> a.on { font-family: 'NanumGothicBlod'; }
+
+
+
+/*타이틀*/
+#titleArea { padding: 20px 0 25px 0; background: url(../images/common/titleBg.gif) bottom repeat-x; }
+#titleArea> h2 { font-size: 30px; color: #2568b7; font-family: 'malgunbd'; }
+#titleArea> p { margin-top: 5px; font-size: 12px; letter-spacing: -1px; color: #5c5c5c; font-family: 'malgun'; }
+
+
+/*검색조건*/
+h3 { font-family: 'malgunbd'; font-size: 23px; height: 34px; padding-top: 0px;text-indent: 40px; }
+h3.useInfo { font-family: 'malgunbd'; font-size: 20px; letter-spacing: -2px; text-indent: 15px; }
+
+.icon01 { background: url(../images/sub/icon01.png) left center no-repeat; }
+.icon02 { background: url(../images/sub/icon02.png) left center no-repeat; }
+.icon03 { background: url(../images/login/blit_01.gif) left center no-repeat; }
+
+.icon04 { background: url(../images/sub/icon03.png) right center no-repeat; }
+.icon05 { background: url(../images/sub/icon04.png) right center no-repeat; }
+.icon06 { background: url(../images/sub/icon05.png) right center no-repeat; }
+.icon07 { background: url(../images/sub/icon06.png) right center no-repeat; }
+.icon08 { background: url(../images/sub/icon07.png) right center no-repeat; }
+
+#contArea { padding: 15px 0px; border-top: 1px solid #d5d5d5; background: #f6f6f6; }
+#contArea #mainCont { width: 950px; padding: 15px; border: 1px solid #d5d5d5; background: #FFF; position: relative; }
+#contArea #mainCont:after { content:""; clear:both; display:block; *zoom:1; }
+
+.contDivi { width: 49%; position: relative; }
+.contDivi:after { content:""; clear:both; display:block; *zoom:1; }
+.contDivi> h4, .contDivi> table> tbody tr th h4 { padding-left: 15px; font-size: 14px; font-family: 'NanumGothicBlod'; background: url(../images/sub/blit_01.gif) left center no-repeat; letter-spacing: -1px; }
+.contDivi> table { width: 100%; }
+
+
+.contDivi .box { padding: 10px; margin-top: 7px; background: #f5f5f5; border: 1px solid #dbdbdb; font-size: 12px; }
+.contDivi .box> ul { }
+.contDivi .box> ul> li { min-width: 130px; display: inline-block; }
+.contDivi .box> ul> li> input { vertical-align: middle; margin-right: 5px; }
+.contDivi .box> ul> li> label { }
+.contDivi .box> p { }
+.contDivi .box> p> label { width: 92px; padding-left: 8px; display: inline-block; font-family: 'NanumGothicBlod'; background: url(../images/sub/blit_02.gif) left center no-repeat; }
+.contDivi .box> p> select, input, .box> select { padding: 3px; vertical-align: middle; }
+
+.contDivi .box2 { padding: 10px; background: #FFF; border: 1px solid #dbdbdb; overflow-x: hidden; overflow-y:scroll; font-size: 11px; position: relative; }
+.contDivi .box2> table.inves { width: 100%; border-top: 2px solid #167dcc;  }
+.contDivi .box2> table.inves thead th { height: 23px; background: #f6f6f8; border-bottom: 1px solid #e1e1e1; border-right: 1px solid #e1e1e1; text-align: center; font-family: 'NanumGothicBlod'; }
+.contDivi .box2> table.inves tbody td { height: 23px; border-bottom: 1px solid #e1e1e1; border-right: 1px solid #e1e1e1; text-align: center; }
+
+.contDivi .box2> div { position: relative; }
+.contDivi .box2> div> p { font-size: 12px; padding: 7px 0px 7px 42px; background: #f5f5f5 url(../images/sub/folder_off.png) 7px center no-repeat; font-family: 'NanumGothicBlod'; border-bottom: 1px solid #dbdbdb; cursor: pointer; position: relative; }
+.contDivi .box2> div> p.off { background: #f5f5f5 url(../images/sub/folder_on.png) 7px center no-repeat; }
+.contDivi .box2> div> ul { }
+.contDivi .box2> div> ul li { padding: 7px 0px 7px 24px; /*background: url(../images/sub/blit_03.gif) no-repeat;*/ border-bottom: 1px solid #dbdbdb; }
+.contDivi .box2> div> ul li input { vertical-align: middle; }
+
+.all { position: absolute; right: 5px; top: 7px; z-index: 1; }
+
+
+
+/*열기접기*/
+#btn { border-top: 1px solid #0072bb; }
+#btn .btn_on, .btn_off { width: 64px; height: 20px; cursor: pointer; }
+#btn .btn_on { background: url(../images/sub/btn_close.gif) no-repeat; }
+#btn .btn_off { background: url(../images/sub/btn_open.gif) no-repeat; }
+
+
+
+
+/*검색결과*/
+.tabMenu { }
+.tabMenu:after { content:""; clear:both; display:block; *zoom:1; }
+.tabMenu li { width: 150px; float: left; padding-top: 13px; height: 32px;  text-align: center; border: 1px solid #d8d8d8; border-bottom: 1px solid #33435a; background: #f8f8f8; cursor: pointer; font-family: 'NanumGothicBlod'; }
+.tabMenu li.on { color: #034380; background: #ffffff; border: 1px solid #33435a; border-bottom: none; }
+.tabMenu li.bin { height: 33px; cursor: default; background: none; border: none; border-bottom: 1px solid #33435a;}
+
+.resultUtil { margin-top: 15px; letter-spacing: -1px; }
+.resultUtil:after { content:""; clear:both; display:block; *zoom:1; }
+.resultUtil> span { float: left; font-size: 14px; background: url(../images/sub/blit_04.gif) left center no-repeat; padding-left: 16px; color: #545454; }
+.resultUtil> span b { color: #ff5900; font-family: 'NanumGothicBlod'; letter-spacing: 0px; }
+.resultUtil> a { float: right; font-size: 12px; }
+
+
+.resultArea { clear: both; height: 400px; overflow-x: scroll; overflow-y: scroll;  }
+.resultArea> table { width: 100%; border-top: 2px solid #718eb8; margin-top: 10px;  }
+.resultArea> table thead th { padding: 8px 0px; background: #f3f7fa; font-size: 14px; font-family: 'NanumGothicBlod'; text-align: center; border-bottom: 1px solid #d6dadd; border-right: 1px solid #d6dadd; }
+.resultArea> table tbody td { padding: 9px 0px; font-size: 12px; text-align: center; border-bottom: 1px solid #d6dadd; border-right: 1px solid #d6dadd; color: #515151; }
+.resultArea> table tbody td a.error { color: #F00; text-decoration: underline; }
+
+table.etc { width: 100%; border-top: 3px solid #686870; letter-spacing: -1px; } 
+table.etc> thead> tr> th { height: 39px; border-bottom: 1px solid #d7d7d7; border-right: 1px solid #d7d7d7; font-family: 'malgunbd'; text-align: center; }
+table.etc> thead> tr> td { }
+table.etc> tbody> tr> th { background: url(../images/sub/blit_05.gif) left center no-repeat; text-indent: 10px; border-bottom: 1px solid #d7d7d7; border-right: 1px solid #d7d7d7; font-family: 'malgunbd'; text-align: left; }
+table.etc> tbody> tr> td { height: 39px; border-bottom: 1px solid #d7d7d7; border-right: 1px solid #d7d7d7; font-family: 'malgun'; font-size: 14px; text-align: center; }
+table.etc> tbody> tr> td span.Lv2 { width: 9px; height: 11px; background: url(../images/sub/icon_tree.gif) left center no-repeat; }
+table.etc> tbody> tr> td> a { width: 82px; height: 25px; padding: 3px 0px 0px 16px; text-align: left; display: block; margin-left: 30px; }
+table.etc> tbody> tr> td> a.downSt1 { background: #fafbfd url(../images/sub/icon_arrow3.png) 72px center no-repeat; border: 1px solid #b6b7bb; color: #000; }
+table.etc> tbody> tr> td> a.downSt2 { background: #646d7c url(../images/sub/icon_arrow4.png) 72px center no-repeat; border: 1px solid #465369; color: #fff; }
+table.etc> tbody> tr> td span.chart { height: 12px; background: #09C; display: block; }
+
+ul.useDown { }
+ul.useDown:after { content:""; clear:both; display:block; *zoom:1; }
+ul.useDown li { width: 50%; letter-spacing: -1px; }
+ul.useDown li> p { font-size: 13px; color: #666; font-family: 'malgun'; }
+ul.useDown li> a { width: 180px; padding: 15px 20px; margin-top: 20px; display: block; color: #FFF; background: url(../images/sub/icon_arrow5.png) right center no-repeat; }
+ul.useDown li> a.downManual { background: #37b784; }
+ul.useDown li> a.report { background: #425e8e; }
+ul.useDown li> a> span { width: 17px; height: 17px; background: url(../images/sub/icon_arrow5.png) no-repeat; display: block; }
+
+
+
+
+/*사이트맵*/
+.sitemapBg { height: 162px; background: url(../images/sub/sitemapBg.gif) right top no-repeat !important; }
+.sitemapBg p.Lv1 { font-size: 22px !important; color: #000 !important; letter-spacing: -2px !important; font-family: 'malgunbd' !important; } 
+
+ul#sitemap { }
+ul#sitemap:after { content:""; clear:both; display:block; *zoom:1; }
+ul#sitemap> li { width: 185px; margin-right: 10px; float: left; }
+ul#sitemap> li> dl { }
+ul#sitemap> li> dl> dt { width: 176px; height: 28px; border-bottom: 2px solid #2e4161; padding-bottom: 13px; letter-spacing: -1px; font-family: 'malgunbd'; font-size: 22px; }
+ul#sitemap> li> dl> dt.size15 { font-size: 15px !important; }
+ul#sitemap> li> dl> dt> span { font-size: 16px; color: #757575; }
+ul#sitemap> li> dl> dd { width: 174px; height: 300px; border: 1px solid #e1e1e1; margin-top: 20px; }
+ul#sitemap> li> dl> dd> a { height: 29px; padding: 9px 0px 0px 30px; display: block; background: url(../images/sub/blit_06.gif) 17px 15px no-repeat; position: relative; font-size: 14px; color: #000; }
+ul#sitemap> li> dl> dd> a:hover { background: url(../images/sub/sitemapOver.gif) no-repeat; width: 185px; font-family: 'NanumGothicBlod'; }
+
+
+/*관리자*/
+.admUtil { margin-top: 15px; letter-spacing: -1px; }
+.admUtil:after { content:""; clear:both; display:block; *zoom:1; }
+.admUtil> span { float: left; font-size: 14px; color: #545454; }
+.admUtil> span> select { padding: 4px; }
+.admUtil> div { float: right; font-size: 12px; }
+
+
+
+
+/*푸터*/
+#footerArea { border-top: 1px solid #d5d5d5; border-bottom: 1px solid #d5d5d5; padding: 10px 0px; }
+#footerArea #footerUtil { font-size: 11px; }
+#footerArea #footerUtil a { display: inline; color: #808080; margin-right: 5px; }
+
+#copyArea { background: #f6f6f6; padding: 20px 0px; font-size: 11px; height: 100%; color: #808080; }
+#copyArea #address> p { margin-top: 7px;  font-family: 'Verdana'; }
+#copyArea #address> p> b { color: #1d518c; }

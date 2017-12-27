@@ -1,0 +1,69 @@
+/*body, div { height: 100%; }*/
+
+/*화면 전체틀*/
+.fullFrame { width: 100%; position: relative; clear: both; }
+.contentFrame { width: 980px; display: block; position: relative; margin: 0px auto; }
+
+
+
+
+/*회원가입*/
+#outskirts { padding: 10px 5px 5px 5px; border-top: 4px solid #444; background: #f6f6f6; }
+#outskirts> h4 { padding-left: 17px; letter-spacing: -1px; font-family: 'NanumGothicBlod'; font-size: 14px; }
+.pic1 { background: url(../images/pop/icon_01.gif) left center no-repeat; }
+.pic2 { background: url(../images/pop/icon_02.gif) left center no-repeat; }
+.pic3 { background: url(../images/pop/icon_03.gif) left center no-repeat; }
+.pic4 { background: url(../images/pop/icon_04.gif) left center no-repeat; }
+.pic5 { background: url(../images/pop/icon_05.gif) left center no-repeat; }
+.pic6 { background: url(../images/pop/icon_06.gif) left center no-repeat; }
+.pic7 { background: url(../images/pop/icon_07.gif) left center no-repeat; }
+.pic8 { background: url(../images/pop/icon_08.gif) left center no-repeat; }
+
+.blit01 { background: url(../images/login/blit_01.gif) left 2px no-repeat; }
+
+
+#outskirts> .popConts { padding: 5px; background: #fff; border: 1px solid #d5d5d5; }
+table.inventory { width: 100%; border-top: 2px solid #0553a8; font-size: 12px; letter-spacing: -1px; }
+table.inventory thead tr th { text-align: center; height: 30px;  font-family: 'NanumGothicBlod'; border-bottom: 1px solid #d5d5d5; border-right: 1px solid #d5d5d5; background: #f1f9fc;  }
+table.inventory thead tr td { text-align: center; border-bottom: 1px solid #d5d5d5; border-right: 1px solid #d5d5d5; }
+
+table.inventory tbody tr th { text-align: center; border-bottom: 1px solid #d5d5d5; border-right: 1px solid #d5d5d5; height: 30px; background: #f1f9fc; font-family: 'NanumGothicBlod';  }
+table.inventory tbody tr td { text-align: center; border-bottom: 1px solid #d5d5d5; border-right: 1px solid #d5d5d5; height: 30px; }
+table.inventory tbody tr td input { vertical-align: middle; }
+table.inventory tbody tr td textarea { border: 1px solid #d5d5d5; }
+table.inventory tbody tr td img { vertical-align: middle; }
+table.inventory tbody tr th.lev2 { background: #fffde3; }
+
+table.inventory tbody tr td> input, select { height: 22px; border: 1px solid #d5d5d5; vertical-align: middle; font-size: 12px; }
+table.inventory tbody tr td> a> span { width: 11px; height: 11px; margin-right: 2px;  display: inline-block; background: url(../images/pop/icon_check.png) no-repeat; }
+table.inventory tbody tr td> span { color: #F00; }
+#outskirts> .popConts> p.btnArea { margin: 10px auto; text-align: center; }
+#outskirts> .popConts> p.info { font-size: 11px; color: #333; background: url(../images/pop/blit_01.gif) left 3px no-repeat; padding-left: 7px; }
+#outskirts> .popConts> p.info span { color: #fe6a20; text-decoration: underline; }
+
+#outskirts> .popConts> h5 { font-family: 'NanumGothicBlod'; font-size: 14px; }
+.boxArea { border: 5px solid #dce8f8; padding: 5px; font-size: 12px; }
+.boxArea li { font-size: 11px; color: #333; background: url(../images/pop/blit_02.gif) left 5px no-repeat; padding-left: 6px; margin-bottom: 6px; }
+.boxArea li b { font-family: 'NanumGothicBlod'; }
+
+.yScroll { overflow-x: hidden; overflow-y: scroll; }
+.xScroll { overflow-x: scroll; overflow-y: hidden; }
+.xyScroll { overflow-x: scroll; overflow-y: scroll; }
+
+
+
+table.level2Box { border-top: 2px solid #666; width: 100%; font-size: 12px; }
+table.level2Box thead tr th { background: #efefef; height: 25px; border-bottom: 1px solid #d5d5d5; border-right: 1px solid #d5d5d5; text-align: center; font-family: 'NanumGothicBlod'; }
+table.level2Box tbody tr td { height: 25px; border-bottom: 1px solid #d5d5d5; border-right: 1px solid #d5d5d5; text-align: center; }
+
+
+
+
+
+
+
+
+
+
+
+

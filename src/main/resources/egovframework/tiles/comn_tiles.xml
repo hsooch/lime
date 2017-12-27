@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+    
+<tiles-definitions>
+    <!-- 에러 페이지 -->
+    <definition name="cmmn/transactionFailure" extends=".default"  >
+        <put-attribute name="body" value="/common/cmmn/dtransactionFailure.jsp"></put-attribute>      
+    </definition>
+    <definition name="cmmn/dataAccessFailure" extends=".default"  >
+        <put-attribute name="body" value="/common/cmmn/dataAccessFailure.jsp"></put-attribute>      
+    </definition>
+    <definition name="cmmn/accessDenied" extends=".default"  >
+        <put-attribute name="body" value="/common/cmmn/egovError.jsp"></put-attribute>      
+    </definition>
+    <definition name="cmmn/bizError" extends=".default"  >
+        <put-attribute name="body" value="/common/cmmn/egovError.jsp"></put-attribute>      
+    </definition>
+    <!--// 에러 페이지 -->
+    
+    <!-- 에러메세지 스크립트 처리 페이지 -->
+    <definition name="cmmn/errorMessage" extends=".default"  >
+        <put-attribute name="body" value="/common/errorMessage.jsp"></put-attribute>      
+    </definition>
+    <!--// 에러메세지 스크립트 처리 페이지 -->
+    
+    <!-- 에디터 파일 업로드 -->
+    <definition name="ckeditor/upload" extends=".default"  >
+        <put-attribute name="body" value="/ckeditor/upload.jsp"></put-attribute>      
+    </definition>
+    
+</tiles-definitions>

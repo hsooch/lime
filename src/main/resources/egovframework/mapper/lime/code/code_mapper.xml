@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="codeMapper">
+    <!-- 코드 기본 리스트 -->
+    <select id="getCodeList" parameterType="Map" resultType="HashMap">
+        SELECT B.NO, CD, CD_NM1, CD_NM2, CD_NM3, CD_NM4, CD_NM5, CD_NM6, CD_NM7, REG_ID, REG_DT, CHG_ID, CHG_DT, 
+         A.TYPE,  A.NOTE
+        FROM CODE_ A, CODE_SUB B
+        WHERE A.NO = B.NO
+        AND A.NO = #{no}
+    </select>
+    <select id="getCodeList1" parameterType="Map" resultType="HashMap">
+    /*자료분류 선택*/
+		SELECT CD, CD_NM2 CD_NM
+		FROM (
+		      SELECT CD, ROW_NUMBER() OVER (PARTITION BY CD_NM2 ORDER BY CD) RN, CD_NM2
+		        FROM CODE_SUB
+		       WHERE NO = 47
+		         AND CD LIKE #{pa1}||'%')
+		WHERE RN = 1
+		ORDER BY CD
+    </select>
+    <select id="getCodeList2" parameterType="Map" resultType="HashMap">
+    /*수질영향권역 선택 - 대권역*/
+        SELECT CD_NM2 CD, CD_NM3 CD_NM
+        FROM CODE_SUB
+        WHERE NO = 48
+        GROUP BY CD_NM2, CD_NM3
+        ORDER BY CD_NM2
+    </select>
+    <select id="getCodeList3" parameterType="Map" resultType="HashMap">
+    /*수질영향권역 선택 - 중권역(대권역 한강(1), 낙동강(2), 금강(3), 영산강(4))*/
+		SELECT CD_NM4 CD, CD_NM5 CD_NM
+        FROM CODE_SUB
+        WHERE NO = 48
+        AND CD_NM4 LIKE #{pa1}||'%'
+        GROUP BY CD_NM4, CD_NM5
+        ORDER BY CD_NM4
+    </select>
+    <select id="getCodeList4" parameterType="Map" resultType="HashMap">
+    /*수계 선택(대권역 한강(1), 낙동강(2), 금강(3), 영산강(4))*/
+        SELECT CD, CD_NM1 CD_NM
+        FROM CODE_SUB 
+        WHERE NO = 49
+        AND CD LIKE #{pa1}||'%'
+        ORDER BY CD
+    </select>
+    <select id="getCodeList5" parameterType="Map" resultType="HashMap">
+    /*자료구분 선택*/
+    --1) 구분 선택
+        SELECT CD, CD_NM1 CD_NM
+        FROM (
+            SELECT CD, ROW_NUMBER() OVER (PARTITION BY CD_NM1 ORDER BY CD) RN, CD_NM1
+            FROM CODE_SUB
+            WHERE NO = 47)
+        WHERE RN = 1
+        ORDER BY CD
+    </select>
+    <select id="getCodeList6" parameterType="Map" resultType="HashMap">
+    --2) 조사분야 선택(구분 하천(1), 하구(2), 보(3))
+        SELECT CD, CD_NM2 CD_NM
+        FROM (
+            SELECT CD, ROW_NUMBER() OVER (PARTITION BY CD_NM2 ORDER BY CD) RN, CD_NM2
+            FROM CODE_SUB
+            WHERE NO = 47
+            AND CD LIKE #{pa1}||'%')
+        WHERE RN = 1
+        ORDER BY CD
+    </select>
+    <select id="getCodeList7" parameterType="Map" resultType="HashMap">
+    --3) 조사자료 선택(조사분야 저서(11), 어류(12), 부착(13), 식생(14), 서식(15), 수질(16))
+		SELECT CD, CD_NM3 CD_NM
+		FROM (
+		      SELECT CD, ROW_NUMBER() OVER (PARTITION BY CD_NM1, CD_NM2, CD_NM3 ORDER BY CD) RN, CD_NM3
+		        FROM CODE_SUB
+		       WHERE NO = 47
+		         AND CD LIKE #{pa1}||'%')
+		WHERE RN = 1
+		ORDER BY CD
+    </select>
+    <select id="getCodeList8" parameterType="Map" resultType="HashMap">
+	/*입력상태 선택*/
+		SELECT CD, CD_NM1 CD_NM
+		FROM CODE_SUB
+		WHERE NO = 0
+		GROUP BY CD, CD_NM1
+		ORDER BY CD
+    </select>
+        
+    
+       
+
+
+ 
+
+ 
+
+
+
+    
+    
+
+
+
+
+   
+   
+</mapper>

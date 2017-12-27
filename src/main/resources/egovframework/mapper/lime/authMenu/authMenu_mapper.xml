@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="authMenuMapper">
+
+    <!-- 권한 목록 -->
+    <select id="getAuthList" parameterType="Map" resultType="HashMap">
+        SELECT * FROM AUTH
+        WHERE USE_YN ='Y'
+        ORDER BY AUTH_CD
+    </select>
+    <!-- 권한 메뉴 목록 -->
+    <select id="getAuthMenuList" parameterType="Map" resultType="HashMap">
+        SELECT LEVEL, A.*
+        FROM (SELECT A.*,  NVL2(B.MENU_ID,'Y','N') AUTH_YN  FROM MENU_INFO A
+                LEFT JOIN AUTH_MENU B
+                ON A.MENU_ID = B.MENU_ID
+                AND B.AUTH_CD = NVL(#{pAuthCd},'A0')) A
+        CONNECT BY  PRIOR MENU_ID =  MENU_SPIR_ID
+        START WITH MENU_LEVEL =  1
+        ORDER SIBLINGS BY MENU_LEVEL, MENU_ORD , MENU_ID
+    </select>
+    <!-- 등록돤 권한 초기화 -->
+    <delete id="deleteAuthMenu" parameterType="Map">
+        DELETE FROM AUTH_MENU
+        WHERE AUTH_CD = #{AUTH_CD}
+    </delete>   
+    <!-- 권한 등록 -->
+    <insert id="insertAuthMenu" parameterType="Map">
+        INSERT INTO AUTH_MENU (
+           AUTH_CD, MENU_ID)
+        VALUES ( #{AUTH_CD}, #{MENU_ID}) 
+    </insert>
+    
+    <!-- 권한 체크용 URL 목록 -->
+    <select id="getAuthUrlList" parameterType="Map" resultType="HashMap">
+        SELECT
+        DISTINCT A.MENU_ID,  NVL(A.MENU_URL,'/lime/')||'.*' AS URL
+        FROM  MENU_INFO A
+        WHERE USE_YN ='Y'
+        AND   MENU_TYP ='L'
+        AND   MENU_URL IS NOT NULL
+        AND   A.MENU_ID IN (
+                             SELECT DISTINCT MENU_ID FROM AUTH_MENU C
+                             WHERE AUTH_CD = #{AUTH_CD}
+                           )
+    </select>
+    
+</mapper>

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title>수생태계 통합 DB 관리시스템</title>
+<!--[if lt ie 9]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+<link href="css/BasicSet.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/btnSt.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/TopMenu.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<!--상단-->
+메뉴명 : 관리 > 파일등록
+<div id="moddleWrap">
+    <!--타이틀-->
+    <div id="titleArea" class="contentFrame">
+        <h2>파일등록</h2>
+        <p>파일등록과 관련된 검색조건을 단계별로 작성하실 경우 원하시는 데이터를 조회하실 수 있습니다.</p>
+    </div>
+    <!--검색조건-->
+    <h3 class="contentFrame MgT10 MgB10 icon01">검색조건</h3>
+    <div id="contArea" class="fullFrame">
+        <div id="mainCont" class="contentFrame">
+            <!--왼쪽 검색조건-->
+            <div class="contDivi W100p">
+                <table>
+                    <colgroup>
+                        <col width="120">
+                        <col />
+                        <col width="120">
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th><h4>자료구분</h4></th>
+                            <td colspan="3">
+                                <div class="box">
+                                    <select class="W150">
+                                        <option>---구분 선택---</option>
+                                    </select>
+                                    <select class="W150">
+                                        <option>---조사분야 선택---</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><h4>검색기간</h4></th>
+                            <td class="PdR80">
+                                <div class="box">
+                                    <select class="W80">
+                                        <option>2014</option>
+                                    </select> 년
+                                    <select class="W60">
+                                        <option>1</option>
+                                    </select> 회차 ~
+                                    <select class="W80">
+                                        <option>2014</option>
+                                    </select> 년
+                                    <select class="W60">
+                                        <option>1</option>
+                                    </select> 회차
+                                </div>
+                            </td>
+                            <th><h4>입력상태</h4></th>
+                            <td>
+                                <div class="box">
+                                    <select class="W150">
+                                        <option>---전체---</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a class="btn05_blue_gra MgT10 fr" href="#">검색</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!--접기, 열기-->
+    <div id="btn" class="fullFrame">
+        <p class="btn_on AC contentFrame"></p>
+        <p class="btn_off AC contentFrame" style="display: none;"></p>
+    </div>
+    
+    
+    <!--검색결과-->
+    <div class="contentFrame">
+        <h3 class="MgT40 MgB10 icon02">검색 결과</h3>
+        <ul class="tabMenu">
+            <li class="tab1 on">등록현황</li>
+            <li class="bin" style="width: 828px;"></li>
+        </ul>
+        
+        <div>
+            <!--등록현황-->
+            <div id="result1" class="resultArea">
+                <div class="resultUtil">
+                    <span>검색결과 : <b>100</b>건</span>
+                    <a class="btn01gray MgL3" href="#">삭제</a>
+                    <a class="btn02blue" href="#">업로드</a>
+                </div>
+                <table summary="등록현황 검색결과">
+                    <colgroup>
+                        <col width="50">
+                        <col width="50">
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th><input name="" type="checkbox" value="" class="checkAll"></th>
+                            <th>번호</th>
+                            <th>입력상태</th>
+                            <th>구분</th>
+                            <th>조사분야</th>
+                            <th>분류</th>
+                            <th>연도</th>
+                            <th>회차</th>
+                            <th>파일명</th>
+                            <th>등록일</th>
+                            <th>등록자</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <td><input name="" type="checkbox" value="" class="item"></td>
+                            <td>1</td>
+                            <td><a class="error" title="데이터에 오류가 있어 시스템에 데이터 입력이 안된 상태. 오류내용 확인 가능하며 수정 후 재업로드 필요">오류</a></td>
+                            <td>하천</td>
+                            <td>부착돌말류</td>
+                            <td>일반정보</td>
+                            <td>2014</td>
+                            <td>2</td>
+                            <td>부착_2014_02.xlsx</td>
+                            <td>2015.09-17 13:02</td>
+                            <td>홍길동</td>
+                        </tr>
+                        <tr>
+                            <td><input name="" type="checkbox" value="" class="item"></td>
+                            <td>2</td>
+                            <td><a title="정상적으로 시스템에 데이터가 입력된 상태. 개별입력 메뉴에서 확정 가능한 상태">완료</a></td>
+                            <td>하천</td>
+                            <td>부착돌말류</td>
+                            <td>일반정보</td>
+                            <td>2014</td>
+                            <td>2</td>
+                            <td>부착_2014_02.xlsx</td>
+                            <td>2015.09-17 13:02</td>
+                            <td>홍길동</td>
+                        </tr>
+                        <tr>
+                            <td><input name="" type="checkbox" value="" class="item"></td>
+                            <td>3</td>
+                            <td><a title="엑셀파일 업로드 후 시스템에 데이터 입력 대기 상태">대기</a></td>
+                            <td>하천</td>
+                            <td>부착돌말류</td>
+                            <td>일반정보</td>
+                            <td>2014</td>
+                            <td>2</td>
+                            <td>부착_2014_02.xlsx</td>
+                            <td>2015.09-17 13:02</td>
+                            <td>홍길동</td>
+                        </tr>
+                        <tr>
+                            <td><input name="" type="checkbox" value="" class="item"></td>
+                            <td>4</td>
+                            <td><a title="엑셀파일 업로드 후 시스템에 데이터 입력 중인 상태">진행</a></td>
+                            <td>하천</td>
+                            <td>부착돌말류</td>
+                            <td>일반정보</td>
+                            <td>2014</td>
+                            <td>2</td>
+                            <td>부착_2014_02.xlsx</td>
+                            <td>2015.09-17 13:02</td>
+                            <td>홍길동</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

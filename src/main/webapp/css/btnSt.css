@@ -1,0 +1,67 @@
+/*body, div { height: 100%; }*/
+
+/*버튼스타일*/
+.btn01gray { background: #5f5f5f; border: 1px solid #414141; padding: 4px 10px; color: #FFF; }
+.btn02blue { background: #2768c2; border: 1px solid #0e4ba0; padding: 4px 10px; color: #fff; }
+.btn03white { background: #fff url(../images/login/blit_02.gif) 15px center no-repeat; border: 1px solid #807e7f; padding: 3px 15px 5px 27px; color: #454545; }
+
+
+
+.btn04_overlap { 
+	color: #42606a; 
+	font-size: 11px;
+	border: 1px solid #d1d1d1;
+	padding: 5px 10px;
+	text-align: center;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background: #ffffff;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(#dae7ed));
+	background: -webkit-linear-gradient(#ffffff, #dae7ed);
+	background: -moz-linear-gradient(#ffffff, #dae7ed);
+	background: -ms-linear-gradient(#ffffff, #dae7ed);
+	background: -o-linear-gradient(#ffffff, #dae7ed);
+	background: linear-gradient(#ffffff, #dae7ed);
+	-pie-background: linear-gradient(#ffffff, #dae7ed);
+	behavior: url(/pie/PIE.htc);
+}
+
+.btn05_blue_gra {
+	color: #fff;
+	border: 1px solid #10315a;
+	padding: 5px 15px;
+	font-size: 11px;
+	text-align: center;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background: #618cc3;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#618cc3), to(#144b9b));
+	background: -webkit-linear-gradient(#618cc3, #144b9b);
+	background: -moz-linear-gradient(#618cc3, #144b9b);
+	background: -ms-linear-gradient(#618cc3, #144b9b);
+	background: -o-linear-gradient(#618cc3, #144b9b);
+	background: linear-gradient(#618cc3, #144b9b);
+	-pie-background: linear-gradient(#618cc3, #144b9b);
+	behavior: url(/pie/PIE.htc); 
+}
+
+.btn06_gray_gra {
+	color: #4b4b4b;
+	border: 1px solid #bbb;
+	padding: 5px 15px;
+	font-size: 11px;
+	text-align: center;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background: #FFFFFF;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FFFFFF), to(#eaeaea));
+	background: -webkit-linear-gradient(#FFFFFF, #eaeaea);
+	background: -moz-linear-gradient(#FFFFFF, #eaeaea);
+	background: -ms-linear-gradient(#FFFFFF, #eaeaea);
+	background: -o-linear-gradient(#FFFFFF, #eaeaea);
+	background: linear-gradient(#FFFFFF, #eaeaea);
+	-pie-background: linear-gradient(#FFFFFF, #eaeaea);
+}

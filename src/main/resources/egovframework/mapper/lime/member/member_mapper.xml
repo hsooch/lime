@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberMapper">
+    <!-- 회원 상세 정보 -->
+    <select id ="getLoginMemberInfo" parameterType="java.util.Map" resultType="memberVo">
+        <![CDATA[
+        SELECT * FROM MEMBER
+        WHERE MBR_ID = #{mbrId}
+        AND PASSWD = #{passwd}
+        ]]>
+    </select>
+    
+    <!-- 회원 정보 -->
+    <select id="getMemberInfo" parameterType="Map" resultType="HashMap">
+        SELECT * FROM MEMBER
+        <if test="MBR_ID !=null and MBR_ID !=''">
+        	AND MBR_ID = #{MBR_ID}
+        </if>
+        ORDER BY MBR_ID
+    </select>
+    
+    <!-- id 중복 체크 -->
+    <select id="idDuplChk" parameterType="Map" resultType="int">
+		SELECT COUNT(*) FROM MEMBER
+		WHERE MBR_ID = #{MBR_ID}
+    </select>
+    
+    <!-- 회원 가입 -->
+    <insert id="signUp" parameterType="memberVo">
+    	INSERT INTO MEMBER
+    		(MBR_ID, MBR_NM, PASSWD, INST_CD, INST_ETC, DEPT_NM, INST_ADM_CD, EMAIL, REG_DT, CHG_DT)
+<!--     		(MBR_ID, MBR_NM, PASSWD, INST_CD, INST_ETC, DEPT_NM, INST_ADM_CD, EMAIL, AUTH_CD, REG_DT, CHG_DT, CONF_YN, REG_NM) -->
+    	VALUES
+    		(#{MBR_ID}, #{MBR_NM}, #{PASSWD}, #{INST_CD}, #{INST_ETC}, #{DEPT_NM}, #{INST_ADM_CD}, #{EMAIL}, SYSDATE, SYSDATE)
+<!--     		(#{MBR_ID}, #{MBR_NM}, #{PASSWD}, #{INST_CD}, #{INST_ETC}, #{DEPT_NM}, #{INST_ADM_CD}, #{EMAIL}, #{AUTH_CD}, SYSDATE, SYSDATE, #{CONF_YN}, #{REG_NM}) -->
+    </insert>
+    
+</mapper>

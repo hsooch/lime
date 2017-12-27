@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="restaurantMapper">
+
+	<!-- 식당 리스트 -->
+	<select id="getRestaurant" parameterType="Map" resultType="HashMap">
+		SELECT DISTINCT RS_ID, RS_NM, RS_INFO, RS_ADDR, RS_PHONE, RS_TIME
+		, ( SELECT CD_NM1 FROM CODE_SUB WHERE NO = 98 AND CD = #{AREA_CD} ) AS RS_AREA
+		, ( SELECT CD_NM1 FROM CODE_SUB WHERE NO = 97 AND CD = #{MENU_CD} ) AS RS_MENU
+		, ( SELECT CD_NM1 FROM CODE_SUB WHERE NO = 96 AND CD = #{CATEGORY_CD} ) AS RS_CATEGORY
+		FROM RESTAURANT
+		<where>
+			<if test = "CATEGORY_CD != null and CATEGORY_CD != ''">
+				CATEGORY_CD = #{CATEGORY_CD}
+			</if>
+			<if test = "MENU_CD != null and MENU_CD != ''">
+				AND MENU_CD like #{MENU_CD}
+			</if>
+			<if test = "AREA_CD != null and AREA_CD != ''">
+				AND AREA_CD like #{AREA_CD}
+			</if>
+		</where>
+		ORDER BY RS_ID+0 DESC
+	</select>
+	
+	<!-- 한개 가져오기 -->
+	<select id="selectRestaurant" parameterType="Map" resultType="HashMap">
+		SELECT RS_ID, RS_NM, RS_INFO, RS_ADDR, RS_PHONE, RS_TIME, CATEGORY_CD, MENU_CD, AREA_CD
+		, (SELECT CD_NM1 FROM CODE_SUB WHERE CD = (SELECT AREA_CD FROM RESTAURANT WHERE RS_ID = #{RS_ID})) AS AREA_NM
+		, (SELECT CD_NM1 FROM CODE_SUB WHERE CD = (SELECT MENU_CD FROM RESTAURANT WHERE RS_ID = #{RS_ID})) AS MENU_NM
+		, (SELECT CD_NM1 FROM CODE_SUB WHERE CD = (SELECT CATEGORY_CD FROM RESTAURANT WHERE RS_ID = #{RS_ID})) AS CATEGORY_NM
+		FROM RESTAURANT
+		WHERE RS_ID = #{RS_ID}
+	</select>
+	
+	<!-- 새글 -->
+	<insert id="insertRestaurant" parameterType="Map">
+	 	<selectKey keyProperty="RS_ID" resultType="int" order="BEFORE">
+            SELECT NVL(MAX(RS_ID+0),0)+1  FROM  RESTAURANT
+        </selectKey>
+		INSERT INTO RESTAURANT (
+			RS_ID, RS_NM, RS_INFO, RS_ADDR, RS_PHONE, RS_TIME, CATEGORY_CD, MENU_CD, AREA_CD
+		)
+		VALUES (
+			#{RS_ID}, #{REST_NM}, #{REST_INFO}, #{REST_ADDR}, #{REST_PHONE}, #{REST_TIME}, #{CTG_SEL}, #{MENU_SEL}, #{AREA_SEL}
+		)
+	</insert>
+	
+	<!-- 글 수정 -->
+	<update id="updateRestaurant" parameterType="Map">
+		UPDATE RESTAURANT
+		SET RS_NM = #{RS_NM}, RS_INFO = #{RS_INFO}, RS_ADDR = #{RS_ADDR}, RS_PHONE = #{RS_PHONE}
+					, RS_TIME = #{RS_TIME}, CATEGORY_CD = #{CTG_SEL}, MENU_CD = #{MENU_SEL}, AREA_CD = #{AREA_SEL}
+		WHERE RS_ID = #{RS_ID}
+	</update>
+	
+	<!-- 글 삭제 -->
+	<delete id="deleteRestaurant" parameterType="Map">
+		DELETE
+		FROM RESTAURANT
+		WHERE RS_ID IN
+		<foreach collection="RS_ID" item="item" open="(" close=")" separator=",">
+<!-- 			#{type.value} -->
+  			#{item,jdbcType=VARCHAR}
+		</foreach>
+	</delete>
+	
+</mapper>

@@ -1,0 +1,37 @@
+/*body, div { height: 100%; }*/
+
+/*화면 전체틀*/
+.fullFrame { width: 100%; position: relative; clear: both; }
+.contentFrame { width: 980px; display: block; position: relative; margin: 0px auto; }
+
+
+
+
+/*회원가입*/
+#outskirts { padding: 10px 5px 5px 5px; border-top: 4px solid #444; background: #f6f6f6; }
+#outskirts> h4 { padding-left: 17px; letter-spacing: -1px; font-family: 'NanumGothicBlod'; font-size: 14px; }
+.pic1 { background: url(../images/pop/icon_01.gif) left center no-repeat; }
+.pic2 { background: url(../images/pop/icon_02.gif) left center no-repeat; }
+.pic3 { background: url(../images/pop/icon_03.gif) left center no-repeat; }
+.pic4 { background: url(../images/pop/icon_04.gif) left center no-repeat; }
+.pic5 { background: url(../images/pop/icon_05.gif) left center no-repeat; }
+.blit01 { background: url(../images/login/blit_01.gif) left 2px no-repeat; }
+
+
+#outskirts> .popConts { padding: 5px; background: #fff; border: 1px solid #d5d5d5; }
+#outskirts> .popConts> table { width: 100%; border-top: 2px solid #0553a8; font-size: 12px; letter-spacing: -1px; }
+#outskirts> .popConts> table tbody th { width: 70px;  background: #f1f9fc; font-family: 'NanumGothicBlod'; }
+#outskirts> .popConts> table tbody th, td { border-bottom: 1px solid #d5d5d5; height: 22px; padding: 5px 0px 5px 10px;}
+#outskirts> .popConts> table tbody td> input, select { height: 22px; border: 1px solid #d5d5d5; vertical-align: middle; font-size: 12px; }
+#outskirts> .popConts> table tbody td> a> span { width: 11px; height: 11px; margin-right: 2px;  display: inline-block; background: url(../images/pop/icon_check.png) no-repeat; }
+#outskirts> .popConts> p.btnArea { margin: 10px auto; text-align: center; }
+
+#outskirts> .popConts> p.info { font-size: 11px; color: #333; background: url(../images/pop/blit_01.gif) left center no-repeat; padding-left: 7px; }
+#outskirts> .popConts> p.info span { color: #fe6a20; text-decoration: underline; }
+
+#outskirts> .popConts> h5 { font-family: 'NanumGothicBlod'; font-size: 14px; }
+.boxArea { border: 5px solid #dce8f8; padding: 14px; 9px; }
+.boxArea li { font-size: 11px; color: #333; background: url(../images/pop/blit_02.gif) left 5px no-repeat; padding-left: 6px; margin-bottom: 6px; }
+.boxArea li b { font-family: 'NanumGothicBlod'; }
+
+.picscroll { overflow-x: hidden; overflow-y:scroll; }

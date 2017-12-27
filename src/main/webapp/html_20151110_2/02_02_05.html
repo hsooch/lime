@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title>수생태계 통합 DB 관리시스템</title>
+<!--[if lt ie 9]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+<link href="css/BasicSet.css" rel="stylesheet" type="text/css" />
+<link href="css/pop.css" rel="stylesheet" type="text/css" />
+<link href="css/btnSt.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/TopMenu.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div id="outskirts" class="W600">
+	<h4 class="pic8">조사일반정보 신규등록 및 수정</h4>
+    <div class="popConts MgT10">
+    	<h5 class="blit01 MgT10 PdL15">조사구간</h5>
+        <table class="inventory MgT10" summary="">
+            <colgroup>
+                <col width="80">
+                <col />
+                <col width="95">
+                <col />
+            </colgroup>
+            <tbody>
+                <tr>
+                	<th>조사구간코드</th>
+                    <td class="AL PdL10 borR0">
+                    	<input class="W200" name="" type="text">
+                    	<a class="btn01gray" href="#">검색</a>
+                    </td>
+            	</tr>
+                <tr>
+                	<th>자료구분</th>
+                    <td class="AL PdL10 borR0">
+                    	<select class="W150">
+                    		<option>하천</option>
+                    	</select>
+                        <select class="W150 MgL10">
+                    		<option>저서성대형무척추동물</option>
+                    	</select>
+                    </td>
+            	</tr>
+                <tr>
+                	<th>조사연도 및 회차</th>
+                    <td class="AL PdL10 borR0">
+                    	<select class="W70">
+                    		<option>2014</option>
+                    	</select> 년
+                        <select class="W50 MgL10">
+                    		<option>1</option>
+                    	</select> 회차
+                        <a class="btn01gray fr MgR10" href="#">적용</a>
+                        <a class="btn08disabled fr MgR10" href="#">적용</a>
+                    </td>
+            	</tr>
+            </tbody>
+        </table>
+        
+        <h5 class="blit01 MgT20 PdL15">조사일반 정보</h5>
+        <div class="xyScroll H400 MgT10">
+            <table class="inventory" summary="">
+                <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col width="158">
+                    <col />
+                    <col width="158">
+                </colgroup>
+                <tbody>
+                	<tr>
+                        <th rowspan="2">조사수행</th>
+                        <th colspan="2">조사일(YYMMDD)</th>
+                        <td class="AL PdL5">
+                        	<input class="W100" name="" type="text">
+                            <a href="#"><img class="MgL2" src="images/pop/icon_cal.gif" /></a>
+                        </td>
+                        <th>날씨</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">조사기관</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>조사자</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>기상조건</th>
+                        <th colspan="2">기온(℃)</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>수온(℃)</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                      <th rowspan="2">조사방법</th>
+                        <th colspan="2">Surber net<br />(30*30)</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>Surber net<br />(50*50)</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">드레지</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>에크만</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="4">유역이용</th>
+                        <th colspan="2">산림</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <th>목초</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">마을</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <th>상가(음식점)</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">농경지</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <th>공장지대</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">주거밀집지</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <th>기타</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">오염원</th>
+                        <th colspan="2">축산폐수유입</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>생활하수유입</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">각종 공사</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>기타</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">수변환경</th>
+                        <th rowspan="2">식생</th>
+                        <th>교목(%)</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>관목(%)</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>초본(%)</th>
+                        <td colspan="3" class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="7">수변환경</th>
+                        <th colspan="2">수피도</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <th>범람원의 이용</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="3">제방(좌안)</th>
+                        <th>자연형</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <th>석축</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>돌망태</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <th>콘블럭</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>콘수직</th>
+                        <td colspan="3" class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="3">제방(우안)</th>
+                        <th>자연형</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <th>석축</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>돌망태</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <th>콘블럭</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>콘수직</th>
+                        <td colspan="3" class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="4">하상구조</th>
+                        <th rowspan="4">하상구성</th>
+                        <th>점토</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>니</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>모래</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>잔자갈</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>자갈</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>호박돌</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>암반</th>
+                        <td colspan="3" class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="4">하천현황</th>
+                        <th colspan="2">하천유형</th>
+                        <td colspan="3" class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">수리수문</th>
+                        <th>하폭(m)</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>수폭(m)</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>평균수심(㎝)</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>평균유속(㎝/s)</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>기타</th>
+                        <th>탁도</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <th>냄새</th>
+                        <td class="AL PdL5">
+                        	<select class="W145">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">채집<br />불가시</th>
+                        <th colspan="2">특이사항</th>
+                        <td colspan="3" class="AL PdL5"><input class="W380" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">세부내용</th>
+                        <td colspan="3" class="AL PdL5"><input class="W380" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>채집<br />가능시</th>
+                        <th colspan="2">특이사항</th>
+                        <td colspan="3" class="AL PdL5"><input class="W380" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">총 개체수</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>총 종수</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">군집지수</th>
+                        <th colspan="2">우점도지수</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>다양도지수</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">종풍부도지수</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>균등도지수</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">저서동물지수</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                        <th>저서동물등급</th>
+                        <td class="AL PdL5"><input class="W145" name="" type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+                
+        <p class="btnArea">
+        	<a class="btn05_blue_gra" href="#">저장</a>
+            <a class="btn06_gray_gra" href="#">취소</a>
+        </p>
+    </div>
+    
+</div>
+</body>
+</html>

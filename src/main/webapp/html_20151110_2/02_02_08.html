@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<title>수생태계 통합 DB 관리시스템</title>
+<!--[if lt ie 9]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+<link href="css/BasicSet.css" rel="stylesheet" type="text/css" />
+<link href="css/pop.css" rel="stylesheet" type="text/css" />
+<link href="css/btnSt.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/TopMenu.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div id="outskirts" class="W900">
+	<h4 class="pic6">단면정보 입력</h4>
+    <div class="popConts MgT10">
+    	<h5 class="blit01 MgT10 PdL15">조사구간</h5>
+        <table class="inventory MgT10" summary="">
+            <colgroup>
+                <col width="120">
+                <col />
+            </colgroup>
+            <tbody>
+                <tr>
+                	<th>조사구간코드</th>
+                    <td class="AL PdL10 borR0"><input type="text" disabled class="W200"></td>
+            	</tr>
+                <tr>
+                	<th>자료구분</th>
+                    <td class="AL PdL10 borR0">
+                    	<input type="text" disabled class="W200" value="하천">
+                        <input type="text" disabled class="W200" value="수변식생">
+                  </td>
+            	</tr>
+                <tr>
+                	<th>조사연도 및 회차</th>
+                    <td class="AL PdL10 borR0">
+                      <input type="text" disabled class="W100" value="2015">
+                      <input type="text" disabled class="W100" value="01">
+                    </td>
+            	</tr>
+            </tbody>
+        </table>
+        
+        <h5 class="blit01 MgT20 PdL15">조사일반 정보</h5>
+        <div class="xyScroll H400 MgT10">
+            <table class="W120p inventory" summary="">
+                <colgroup>
+                    <col />
+                    <col />
+                    <col />
+
+                </colgroup>
+                <thead>
+                	<tr>
+                    	<th rowspan="2">하천<br />단면번호</th>
+                        <th rowspan="2">거리(m)</th>
+                        <th rowspan="2">각도(˚)</th>
+                        <th rowspan="2">상대높이</th>
+                        <th rowspan="2">수심</th>
+                        <th rowspan="2">사진번호</th>
+                        <th rowspan="2">하상재질</th>
+                        <th rowspan="2">나지구분</th>
+                        <th rowspan="2">군집명</th>
+                        <th colspan="2">교목</th>
+                        <th colspan="2">아교목</th>
+                        <th colspan="2">관목</th>
+                        <th colspan="2">초본</th>
+                        <th colspan="2" rowspan="2"></th>
+                    </tr>
+                    <tr>
+                    	<th>높이(m)</th>
+                        <th>피도(%)</th>
+                        <th>높이(m)</th>
+                        <th>피도(%)</th>
+                        <th>높이(m)</th>
+                        <th>피도(%)</th>
+                        <th>높이(m)</th>
+                        <th>피도(%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<tr>
+                    	<td>1</td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td>
+                        	<select class="W50">
+                    			<option>선택</option>
+                        	</select>
+                        </td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><input type="text" class="W50"></td>
+                        <td><a href="#"><img src="images/pop/icon_plus.gif" /></a></td>
+                        <td><a href="#"><img src="images/pop/icon_minus.gif" /></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+                
+        <p class="btnArea">
+        	<a class="btn05_blue_gra" href="#">저장</a>
+            <a class="btn06_gray_gra" href="#">취소</a>
+        </p>
+    </div>
+    
+</div>
+</body>
+</html>
