@@ -51,6 +51,7 @@ public class ClientMainController extends DefaultController {
 	public ModelAndView getRestaurant() throws Exception {
 		ModelAndView mav = new ModelAndView();
 		String resultURL = "client/restaurant/restaurant";
+//		String resultURL = "client/test/view";
 		mav.setViewName(resultURL);
 		
 		return mav;
@@ -70,15 +71,19 @@ public class ClientMainController extends DefaultController {
 	public ModelAndView restForm() throws Exception {
 		/**************** 프로그램 로직 ****************/		
 		String id = StringUtil.noNull(commandMap.get("RS_ID"));
+		String mode;
+		
 		Map<String, Object> result = new HashMap<>();
 		
 		if (!id.isEmpty()) {
+			mode = MODE_MODIFY;
 			result = clientService.selectRestaurant(commandMap);
 			
 			System.out.println("수정하기");
 			System.out.println("restVo: " + result);
 		}
 		else {
+			mode = MODE_WRITE;
 			System.out.println("새로 쓰기");
 		}
 		
@@ -87,6 +92,7 @@ public class ClientMainController extends DefaultController {
 		
 		/************** ModelView 로직 **************/
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("mode", mode);
 		mav.addObject("result", result);
 		mav.setViewName(resultURL);
 		/************** ModelView 로직 **************/
@@ -96,7 +102,19 @@ public class ClientMainController extends DefaultController {
 	@RequestMapping(value = "/restaurant/cu")
 	@ResponseBody
 	public Map<String, Object> insertRest() throws Exception {
-		clientService.insertRest(commandMap);
+		String mode = StringUtil.noNull(commandMap.get("mode"));
+		
+		if (mode.equals(MODE_WRITE)) {
+			clientService.insertRest(commandMap);
+		}
+		// 정보 수정
+		else if (mode.equals(MODE_MODIFY)) {
+			clientService.updateRest(commandMap);
+		}
+		// 정보 삭제
+//		else if (mode.equals(MODE_DELETE)) {
+//			memberService.deleteMember(commandMap);		
+//		} 				
 		
 		Map<String, Object> result = new HashMap<>();
 		result.put("status", "ok");

@@ -29,11 +29,11 @@
     <!-- 회원 가입 -->
     <insert id="signUp" parameterType="memberVo">
     	INSERT INTO MEMBER
-    		(MBR_ID, MBR_NM, PASSWD, INST_CD, INST_ETC, DEPT_NM, INST_ADM_CD, EMAIL, REG_DT, CHG_DT)
-<!--     		(MBR_ID, MBR_NM, PASSWD, INST_CD, INST_ETC, DEPT_NM, INST_ADM_CD, EMAIL, AUTH_CD, REG_DT, CHG_DT, CONF_YN, REG_NM) -->
+<!--     		(MBR_ID, MBR_NM, PASSWD, INST_CD, INST_ETC, DEPT_NM, INST_ADM_CD, EMAIL, REG_DT, CHG_DT) -->
+    		(MBR_ID, MBR_NM, PASSWD, INST_CD, INST_ETC, DEPT_NM, INST_ADM_CD, EMAIL, AUTH_CD, REG_DT, CHG_DT, CONF_YN, REG_NM)
     	VALUES
-    		(#{MBR_ID}, #{MBR_NM}, #{PASSWD}, #{INST_CD}, #{INST_ETC}, #{DEPT_NM}, #{INST_ADM_CD}, #{EMAIL}, SYSDATE, SYSDATE)
-<!--     		(#{MBR_ID}, #{MBR_NM}, #{PASSWD}, #{INST_CD}, #{INST_ETC}, #{DEPT_NM}, #{INST_ADM_CD}, #{EMAIL}, #{AUTH_CD}, SYSDATE, SYSDATE, #{CONF_YN}, #{REG_NM}) -->
+<!--     		(#{MBR_ID}, #{MBR_NM}, #{PASSWD}, #{INST_CD}, #{INST_ETC}, #{DEPT_NM}, #{INST_ADM_CD}, #{EMAIL}, SYSDATE, SYSDATE) -->
+    		(#{MBR_ID}, #{MBR_NM}, #{PASSWD}, #{INST_CD}, #{INST_ETC}, #{DEPT_NM}, #{INST_ADM_CD}, #{EMAIL}, #{AUTH_CD}, SYSDATE, SYSDATE, #{CONF_YN}, #{REG_NM})
     </insert>
     
 </mapper>

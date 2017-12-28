@@ -49,10 +49,17 @@
 	
 	<!-- 글 수정 -->
 	<update id="updateRestaurant" parameterType="Map">
-		UPDATE RESTAURANT
-		SET RS_NM = #{RS_NM}, RS_INFO = #{RS_INFO}, RS_ADDR = #{RS_ADDR}, RS_PHONE = #{RS_PHONE}
-					, RS_TIME = #{RS_TIME}, CATEGORY_CD = #{CTG_SEL}, MENU_CD = #{MENU_SEL}, AREA_CD = #{AREA_SEL}
-		WHERE RS_ID = #{RS_ID}
+		UPDATE 	RESTAURANT
+		SET 
+				RS_NM 	 	= #{REST_NM},
+				RS_INFO  	= #{REST_INFO},
+				RS_ADDR  	= #{REST_ADDR},
+				RS_PHONE 	= #{REST_PHONE},
+				RS_TIME  	= #{REST_TIME},
+				CATEGORY_CD = #{CTG_SEL},
+				MENU_CD 	= #{MENU_SEL},
+				AREA_CD 	= #{AREA_SEL}
+		WHERE 	RS_ID = #{RS_ID}
 	</update>
 	
 	<!-- 글 삭제 -->

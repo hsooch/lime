@@ -60,7 +60,7 @@ function searchRestaurant() {
 	var ctg = $('#CTG_SEL').val();
 	var menu = $('#MENU_SEL').val();
 	var area = $('#AREA_SEL').val();
-	var url = '/restaurant/search/ajax'
+	var url = '/restaurant/search/ajax';
 	var params = {
 			CATEGORY_CD : ctg,
 			MENU_CD : menu,
